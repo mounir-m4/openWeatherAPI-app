@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/5/litera/bootstrap.min.css"
+    />
+    <title>Weather API</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center mt-5 p-5 rounded bg-secondary">
+          <h1 id="w-location" class="text-light"></h1>
+          <h3 class="text-light" id="w-desc"></h3>
+          <h3 id="w-string" class="text-light"></h3>
+          <div class="weather-icon">
+            <img id="w-icon" alt="weather icon" class="w-icon" />
+          </div>
+          <ul class="list-group mt-3" id="w-details">
+            <li class="list-group-item lead" id="w-humidity"></li>
+            <li class="list-group-item lead" id="w-feels-like"></li>
+            <li class="list-group-item lead" id="w-windSpeed"></li>
+            <li class="list-group-item lead" id="w-windDeg"></li>
+          </ul>
+          <hr />
+          <button
+            type="button"
+            class="btn btn-primary btn-md"
+            data-toggle="modal"
+            data-target="#locationModal"
+          >
+            change location
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="locationModal"
+      tabindex="-1"
+      aria-labelledby="locationModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary" id="locationModalLabel">
+              Choose Location
+            </h5>
+            <button
+              type="button"
+              class="close btn"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true" class="lead">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="w-form">
+              <div class="form-group">
+                <label for="city" class="text-secondary mb-1">City</label>
+                <input type="text" id="city" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="state" class="text-secondary mb-1">State</label>
+                <input type="text" id="state" class="form-control" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" id="w-change-btn" class="btn btn-primary">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"
+  ></script>
+  <script src="weather.js"></script>
+  <script src="ui.js"></script>
+  <script src="storage.js"></script>
+  <script src="app.js"></script>
+</html>
